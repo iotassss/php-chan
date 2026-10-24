@@ -4,20 +4,507 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, world!</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#315477">
+  <title>ララベル・ケイクシンフォニー | 周年キャラ案</title>
   <style>
+    :root {
+      color-scheme: light;
+      --ink: #292d32;
+      --muted: #777e86;
+      --blue: #315477;
+      --link: #3478aa;
+      --line: #e5e7e9;
+      --page: #f4f5f6;
+      --paper: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 20px;
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.75;
+    }
+
+    .site-header {
+      color: white;
+      background: var(--blue);
+    }
+
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: min(100% - 40px, 1160px);
+      min-height: 68px;
+      margin: 0 auto;
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .site-name span {
+      color: #9bdcff;
+    }
+
+    .site-label {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.84rem;
+    }
+
+    .page {
+      width: min(100% - 40px, 1160px);
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .breadcrumbs {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .breadcrumbs span {
+      padding: 0 9px;
+      color: #a2a7ac;
+    }
+
+    .article-intro {
+      display: grid;
+      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 44px);
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: 0 3px 12px rgba(38, 45, 51, 0.04);
+    }
+
+    .intro-image {
+      display: block;
+      width: 100%;
+      max-height: 380px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f7f7f7;
+      object-fit: contain;
+    }
+
+    .intro-content {
+      min-width: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      padding: 2px 10px;
+      border-radius: 5px;
+      color: #5f6870;
+      background: #eef0f2;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    .reading {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .intro-copy {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .intro-note {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    main {
+      display: grid;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: 0 3px 12px rgba(38, 45, 51, 0.035);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--line);
+      font-size: clamp(1.25rem, 3vw, 1.55rem);
+      font-weight: 750;
+    }
+
+    .section-heading::before {
+      width: 5px;
+      height: 1.15em;
+      border-radius: 2px;
+      background: var(--link);
+      content: "";
+    }
+
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .profile-table tr + tr {
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-table th,
+    .profile-table td {
+      padding: 14px 10px;
+      vertical-align: top;
+    }
+
+    .profile-table th {
+      width: 180px;
+      color: #515d68;
+      background: #f7f8f9;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .profile-table td {
+      color: #383e44;
+    }
+
+    .episode-label {
+      margin: -8px 0 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .story-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: story;
+    }
+
+    .story-list li {
+      position: relative;
+      min-height: 62px;
+      padding: 4px 0 22px 52px;
+      border-left: 2px solid #dce7ef;
+      counter-increment: story;
+    }
+
+    .story-list li:last-child {
+      min-height: 0;
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .story-list li::before {
+      position: absolute;
+      top: 0;
+      left: -17px;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border: 2px solid #dce7ef;
+      border-radius: 50%;
+      color: var(--blue);
+      background: var(--paper);
+      content: counter(story);
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .story-list p {
+      margin-bottom: 0;
+    }
+
+    .episode-hook {
+      margin: 26px 0 0;
+      padding: 16px 18px;
+      border-left: 4px solid #e3b95f;
+      border-radius: 0 8px 8px 0;
+      color: #514630;
+      background: #fff9e9;
+      font-weight: 700;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .artwork {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 620px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f7f7f7;
+      object-fit: contain;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .origin {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.82fr);
+      align-items: center;
+      gap: 28px;
+    }
+
+    .origin .section-heading {
+      margin-bottom: 10px;
+    }
+
+    .origin-copy {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .source-image {
+      display: block;
+      width: 100%;
+      max-height: 430px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f7f7f7;
+      object-fit: contain;
+    }
+
+    footer {
+      padding-top: 28px;
+      color: #9a8c98;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .site-header-inner {
+        width: min(100% - 28px, 520px);
+        min-height: 58px;
+      }
+
+      .site-label {
+        font-size: 0.74rem;
+      }
+
+      .page {
+        width: min(100% - 28px, 520px);
+        padding: 20px 0 48px;
+      }
+
+      .breadcrumbs {
+        margin-bottom: 16px;
+      }
+
+      .article-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 18px;
+      }
+
+      .intro-image {
+        max-height: 430px;
+      }
+
+      .card {
+        padding: 22px 18px;
+      }
+
+      .profile-table th,
+      .profile-table td {
+        padding: 11px 8px;
+      }
+
+      .profile-table th {
+        width: 120px;
+      }
+
+      .gallery,
+      .origin {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        gap: 24px;
+      }
+
+      .origin {
+        gap: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Hello, world!</h1>
-  <p>Welcome to my website!</p>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <p class="site-name">周年キャラクター<span>図鑑</span></p>
+      <span class="site-label">オリジナルキャラクター案</span>
+    </div>
+  </header>
+
+  <div class="page">
+    <nav class="breadcrumbs" aria-label="パンくずリスト">
+      周年キャラクター図鑑<span aria-hidden="true">›</span>キャラクター<span aria-hidden="true">›</span>ララベル・ケイクシンフォニー
+    </nav>
+
+    <section class="article-intro" aria-labelledby="character-name">
+      <img class="intro-image" src="67609372-FB65-4746-894F-24CEF2B024D3_4_5005_c.jpeg" alt="ララベル・ケイクシンフォニーのビジュアル" fetchpriority="high">
+      <div class="intro-content">
+        <div class="tags" aria-label="キャラクターの分類">
+          <span class="tag">キャラクター</span>
+          <span class="tag">錬金術師</span>
+          <span class="tag">周年企画</span>
+        </div>
+        <h1 id="character-name">ララベル・ケイクシンフォニー</h1>
+        <p class="reading">Larabel Cakesymphony（仮の英字表記）</p>
+        <p class="intro-copy">美味しいケイクを作る程度の能力を持つ錬金術師。紫紺の洋館や人間の里を主な活動場所としている。</p>
+        <p class="intro-note">周年キャラクター案</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="card" aria-labelledby="profile-title">
+        <h2 class="section-heading" id="profile-title">プロフィール</h2>
+        <table class="profile-table">
+          <tbody>
+            <tr>
+              <th scope="row">英字表記</th>
+              <td>Larabel Cakesymphony（仮の英字表記）</td>
+            </tr>
+            <tr>
+              <th scope="row">種族</th>
+              <td>錬金術師</td>
+            </tr>
+            <tr>
+              <th scope="row">能力</th>
+              <td>美味しいケイクを作る程度の能力</td>
+            </tr>
+            <tr>
+              <th scope="row">登場作品</th>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">二つ名</th>
+              <td>象の錬金術師、紫紺の錬金術師、ケイク屋さん</td>
+            </tr>
+            <tr>
+              <th scope="row">危険度</th>
+              <td>中</td>
+            </tr>
+            <tr>
+              <th scope="row">人間友好度</th>
+              <td>中</td>
+            </tr>
+            <tr>
+              <th scope="row">主な活動場所</th>
+              <td>紫紺の洋館、人間の里</td>
+            </tr>
+            <tr>
+              <th scope="row">テーマ曲</th>
+              <td>夢幻の脆弱パティシエール</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" aria-labelledby="episode-one-title">
+        <h2 class="section-heading" id="episode-one-title">第1話あらすじ</h2>
+        <p class="episode-label">リグルに起きた異変と、「象の錬金術師」の謎。</p>
+        <ol class="story-list">
+          <li>
+            <p>リグルが悪さをしていると聞き、魔理沙が退治に向かう。しかし、戦いに敗れてしまう。</p>
+          </li>
+          <li>
+            <p>知らせを受けたアリスがリグルのもとへ。リグルは確かに強く、高度な錬金術を使うが、アリスはなんとかこれを倒す。</p>
+          </li>
+          <li>
+            <p>倒されたリグルが明かしたのは、「象の錬金術師」から「錬金ケイク」をもらい、それを食べて錬金術の能力が上がったということだった。</p>
+          </li>
+        </ol>
+        <p class="episode-hook">錬金ケイクとは何なのか。そして、「象の錬金術師」とは――？</p>
+      </section>
+
+      <section class="card" aria-labelledby="gallery-title">
+        <h2 class="section-heading" id="gallery-title">キャラクタービジュアル</h2>
+        <div class="gallery">
+          <figure>
+            <img class="artwork" src="F8040923-D718-4307-9C5D-4EFEB3EA8F2F_4_5005_c.jpeg" alt="ララベル・ケイクシンフォニーのビジュアル 2" loading="lazy">
+            <figcaption>キャラクターイメージ</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="card origin" aria-labelledby="origin-title">
+        <div>
+          <h2 class="section-heading" id="origin-title">キャラクター誕生のきっかけ</h2>
+          <p class="origin-copy">このツイートをきっかけに幻想入り。</p>
+        </div>
+        <img class="source-image" src="takaichi.PNG" alt="キャラクター案のきっかけとなったツイート" loading="lazy">
+      </section>
+    </main>
+
+    <footer>周年キャラクター案</footer>
+  </div>
 </body>
 
 </html>
