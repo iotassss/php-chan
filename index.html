@@ -214,6 +214,49 @@
       color: #383e44;
     }
 
+    .lore-content {
+      display: grid;
+      gap: 24px;
+    }
+
+    .lore-section + .lore-section {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .lore-section h3 {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .lore-section p {
+      margin: 0;
+      color: #383e44;
+    }
+
+    .lore-section p + p {
+      margin-top: 10px;
+    }
+
+    .lore-highlight {
+      padding: 16px 18px;
+      border-left: 4px solid var(--link);
+      border-radius: 0 8px 8px 0;
+      background: #f3f7fa;
+    }
+
+    .lore-highlight h3 {
+      margin-bottom: 8px;
+    }
+
+    .lore-cliffhanger {
+      color: var(--blue) !important;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
     .episode-label {
       margin: -8px 0 20px;
       color: var(--muted);
@@ -467,18 +510,80 @@
         </table>
       </section>
 
+      <section class="card" aria-labelledby="lore-title">
+        <h2 class="section-heading" id="lore-title">ララベルの説明</h2>
+        <div class="lore-content">
+          <section class="lore-section" aria-labelledby="lore-origin-title">
+            <h3 id="lore-origin-title">幻想入りの経緯</h3>
+            <p>元々PHP言語として存在していたが、脆弱性の発覚により人間たちからの信用を失い利用されなくなり、幻想入りした。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-before-title">
+            <h3 id="lore-before-title">幻想郷に来るまでの活動</h3>
+            <p>外界で脆弱性によって信用を失うまでは、プログラミング言語として、人間たちにコンピュータを簡単に操作する能力を提供していた。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-after-title">
+            <h3 id="lore-after-title">幻想郷に来てからの活動</h3>
+            <p>錬金術に興味を示し、錬金術を誰でも簡単に扱う能力を提供し始める。</p>
+            <p>錬金ケイク🍰を食べるとバフがかかる。</p>
+            <p>PHP時代から今まで、本能的に「難しいものをみんなが使えるようにする」という考えのもと行動している。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-impact-title">
+            <h3 id="lore-impact-title">錬金ケイクが幻想郷に出回った後の影響（前半）</h3>
+            <p>幻想郷の住人たちは錬金ケイクを食べることで、雑魚キャラですら錬金術師として強キャラになる。</p>
+            <p>ほとんどは悪意を持たないため問題ないが、幻想郷で喧嘩が発生した時などは、アリスたちが介入してコントロールすることが難しくなる。</p>
+            <p>主人公勢は怪しんで錬金ケイクを食べていないため、錬金ケイクのバフを受けていない。（なお魔理沙は食べてしまった模様）</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-goal-title">
+            <h3 id="lore-goal-title">ララベルの目的</h3>
+            <p>幻想郷を巨大なひとつの錬金釜に変えること。</p>
+            <p>錬金ケイクを食べた者に錬金術の能力を与える代わりに、無意識に特定のアイテムばかり調合し始め、ララベルの元に納めるようになる（なお魔理沙も）。</p>
+            <p>この状態を通して、幻想郷はララベルが欲しいと願った物を、調合する巨大な錬金釜へと変わっていく。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-impact-later-title">
+            <h3 id="lore-impact-later-title">錬金ケイクが幻想郷に出回った後の影響（後半）</h3>
+            <p>ララベルは、悪意があるものにも錬金ケイクを与え始める。</p>
+            <p>悪意ある錬金術師が現れ、幻想郷の治安が荒れる。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-rampage-title">
+            <h3 id="lore-rampage-title">ララベルの暴走</h3>
+            <p>「誰でも錬金術を使えるようにする」という願いのもと今までの行動をしていた。最初は一部の下等な妖怪や精霊などが錬金術を使えるようにしていた。それは錬金術が使えない弱い存在から感謝されていた。しかし「誰でも錬金術を使えるようにする」という願いの「誰でも」の部分が次第に暴走してゆき、「森羅万象が錬金術を使えるようにする」と願い始めることで、無生物に錬金術を扱う魂を与えられるようになった。</p>
+            <p>その結果、幻想郷の至る場所で錬金術が発生してはララベルに調合アイテムを納めるようになる。</p>
+            <p>が、たまにバグで意図しないものが調合され始め、コントロールが効かなくなり、カオスな状態になる。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-mastermind-title">
+            <h3 id="lore-true-goal-title">ララベルの真の目的</h3>
+            <p>なぜ幻想郷を巨大な錬金釜に変えようとしているのか？</p>
+            <p>理由は、「未だかつてない美味しいケイク🍰を作るため」。</p>
+          </section>
+
+          <section class="lore-section" aria-labelledby="lore-mastermind-title">
+            <h3 id="lore-mastermind-title">黒幕</h3>
+            <p>ララベルの真の目的は悪意のないものだったが、この幻想郷錬金釜のシステムは強力なものだった。</p>
+            <p>そのため、ララベルが幻想郷に来た時に、錬金術を教え、幻想郷錬金釜を作るように仕向け、それを利用しているキャラがいる。</p>
+            <p>それは</p>
+          </section>
+        </div>
+      </section>
+
       <section class="card" aria-labelledby="episode-one-title">
         <h2 class="section-heading" id="episode-one-title">第1話あらすじ</h2>
         <p class="episode-label">リグルに起きた異変と、「象の錬金術師」の謎。</p>
         <ol class="story-list">
           <li>
-            <p>リグルが悪さをしていると聞き、魔理沙が退治に向かう。しかし、戦いに敗れてしまう。</p>
+            <p>リグル🐝が悪さをしていると聞き、魔理沙🧙が退治に向かう。しかし、戦いに敗れてしまう。</p>
           </li>
           <li>
-            <p>知らせを受けたアリスがリグルのもとへ。リグルは確かに強く、高度な錬金術を使うが、アリスはなんとかこれを倒す。</p>
+            <p>知らせを受けたアリス🧸がリグルのもとへ。リグルは確かに強く、高度な錬金術を使うが、アリスはなんとかこれを倒す。</p>
           </li>
           <li>
-            <p>倒されたリグルが明かしたのは、「象の錬金術師」から「錬金ケイク」をもらい、それを食べて錬金術の能力が上がったということだった。</p>
+            <p>倒されたリグルが明かしたのは、「象の錬金術師🐘」から「錬金ケイク🍰」をもらい、それを食べて錬金術の能力が上がったということだった。</p>
           </li>
         </ol>
         <p class="episode-hook">錬金ケイクとは何なのか。そして、「象の錬金術師」とは――？</p>
@@ -493,7 +598,6 @@
           </figure>
         </div>
       </section>
-
       <section class="card origin" aria-labelledby="origin-title">
         <div>
           <h2 class="section-heading" id="origin-title">キャラクター誕生のきっかけ</h2>
