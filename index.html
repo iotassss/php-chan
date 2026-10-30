@@ -389,6 +389,14 @@
       object-fit: contain;
     }
 
+    .personality-gallery img:not(.personality-thumb) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
     footer {
       padding-top: 28px;
       color: #9a8c98;
@@ -534,7 +542,7 @@
         <p>ワタミの社長のような感じ。</p>
         <div class="personality-gallery">
           <img class="personality-thumb" src="https://iotassss.github.io/php-chan/portrait_mosaic.png" alt="性格のイメージ（モザイク加工）" loading="lazy">
-          <img class="personality-thumb" src="https://iotassss.github.io/php-chan/laravel-chan.png" alt="性格のイメージ（ララベル）" loading="lazy">
+          <img src="https://iotassss.github.io/php-chan/laravel-chan.png" alt="性格のイメージ（ララベル）" loading="lazy">
         </div>
       </section>
 
