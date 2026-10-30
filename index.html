@@ -372,6 +372,23 @@
       object-fit: contain;
     }
 
+    .personality-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .personality-thumb {
+      display: block;
+      width: 160px;
+      height: 160px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f7f7f7;
+      object-fit: contain;
+    }
+
     footer {
       padding-top: 28px;
       color: #9a8c98;
@@ -515,12 +532,10 @@
         <p>おっとりしている。一見人畜無害だが、実際には他人に興味がないだけである。</p>
         <p>自分のビジョンを嬉々として語り、笑顔でケーキと社畜を量産する。</p>
         <p>ワタミの社長のような感じ。</p>
-        <div>
-          <img src="https://iotassss.github.io/php-chan/portrait_mosaic.png" alt="性格のイメージ（モザイク加工）" loading="lazy">
-          <img src="http://iotassss.github.io/php-chan/laravel-chan.png" alt="性格のイメージ（ララベル）" loading="lazy">
+        <div class="personality-gallery">
+          <img class="personality-thumb" src="https://iotassss.github.io/php-chan/portrait_mosaic.png" alt="性格のイメージ（モザイク加工）" loading="lazy">
+          <img class="personality-thumb" src="https://iotassss.github.io/php-chan/laravel-chan.png" alt="性格のイメージ（ララベル）" loading="lazy">
         </div>
-
-        <p></p>
       </section>
 
       <section class="card" aria-labelledby="lore-title">
